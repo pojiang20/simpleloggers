@@ -24,6 +24,7 @@ func main() {
 
 	msgID := 1
 	for {
+		//通过consul得知，哪一个是Leader，并向其发送msg
 		kv, _, err := client.KV().Get(serviceKey, nil)
 		if err != nil {
 			log.Fatalf("kv acquire err: %v", err)
