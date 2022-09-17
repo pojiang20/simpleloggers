@@ -3,6 +3,8 @@
 这是一个使用`go`+`consul`实现的简易[分布式日志系统](https://github.com/pojiang20/simpleloggers)。
 项目结构如下图，`producer`中使用`consul`来发现`Leader`，以此决定将信息发送给谁。`node`中`startApi`响应`http`请求，而使用`consul`来选主。
 
+![](img.png)
+
 #### producer
 消息发送方，向指定`url`发送请求
 ```go
